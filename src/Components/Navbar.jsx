@@ -1,0 +1,72 @@
+import React from "react";
+import navlogo from "../assets/logo.png";
+import { Link, NavLink } from "react-router";
+import profileDp from "../assets/profile-dp.png";
+import MainContainer from "../Container/MainContainer";
+
+const Navbar = () => {
+  return (
+    <MainContainer>
+      <div className="grid grid-cols-12 py-4">
+        <Link
+          to={"/"}
+          className="logo col-span-3 flex items-start justify-center gap-2"
+        >
+          <div>
+            <img src={navlogo} alt="" />
+          </div>
+          <h1 className="text-2xl font-bold text-primary">Style Decor</h1>
+        </Link>
+        <div className="NavMenu  col-span-6 flex item-center justify-center gap-3">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "text-foreground"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to={"/service"}
+            className={({ isActive }) =>
+              isActive ? "text-primary  font-bold" : "text-foreground"
+            }
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to={"/about"}
+            className={({ isActive }) =>
+              isActive ? "text-primary  font-bold" : "text-foreground"
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
+            to={"/contact"}
+            className={({ isActive }) =>
+              isActive ? "text-primary  font-bold" : "text-foreground"
+            }
+          >
+            Contact
+          </NavLink>
+        </div>
+        <div className="Profile  col-span-3  flex items-center justify-center gap-2">
+          <NavLink
+            to={"/user-deshboard"}
+            className={({ isActive }) =>
+              isActive ? "text-primary font-bold" : "text-foreground"
+            }
+          >
+            Dashboard
+          </NavLink>
+          <NavLink className={"w-10 h-10"}>
+            <img width={50} height={50} src={profileDp} alt="" />
+          </NavLink>
+        </div>
+      </div>
+    </MainContainer>
+  );
+};
+
+export default Navbar;

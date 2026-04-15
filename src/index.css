@@ -1,2 +1,28 @@
 @plugin "daisyui";
 @import "tailwindcss";
+
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #d35400;
+  --color-accent: #ffb400;
+  --color-background: #ffb400;
+  --color-2nd: #fff3e6;
+  --color-white: #fcfcfc;
+  --color-foreground: #8a8a8a;
+  --color-border: #00000014;
+  --color-primary-foreground: #ffffff;
+  --color-becondary: #fff3e6;
+  --color-secondary-foreground: #5a2f0e;
+  --color-muted: #f3f2f1;
+  --color-pure-white: #ffffff;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-5 py-3;
+}
+
+.btn-secondary {
+  @apply bg-Secondary text-white px-5 py-3;
+}
