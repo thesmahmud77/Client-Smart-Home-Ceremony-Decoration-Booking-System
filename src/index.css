@@ -13,16 +13,16 @@
   --color-foreground: #8a8a8a;
   --color-border: #00000014;
   --color-primary-foreground: #ffffff;
-  --color-becondary: #fff3e6;
+  --color-secondary: #fed7ad;
   --color-secondary-foreground: #5a2f0e;
   --color-muted: #f3f2f1;
   --color-pure-white: #ffffff;
 }
 
 .btn-primary {
-  @apply bg-primary text-white px-5 py-3;
+  @apply bg-primary text-white px-5 py-3 rounded-[6px];
 }
 
 .btn-secondary {
-  @apply bg-Secondary text-white px-5 py-3;
+  @apply bg-[#FFF3E6] text-[#5A2F0E] px-5 py-3 rounded-[6px];
 }
