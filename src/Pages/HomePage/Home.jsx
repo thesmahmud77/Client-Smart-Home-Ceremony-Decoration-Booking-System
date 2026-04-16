@@ -5,6 +5,7 @@ import { FaRegCalendarCheck } from "react-icons/fa";
 import image2 from "../../assets/image2.png";
 import MainContainer from "../../Container/MainContainer";
 import Home2nd from "./Home2nd";
+import Home3rd from "./Home3rd";
 
 const Home = () => {
   return (
@@ -57,6 +58,7 @@ const Home = () => {
         </div>
       </section>
       <Home2nd></Home2nd>
+      <Home3rd></Home3rd>
     </MainContainer>
   );
 };
