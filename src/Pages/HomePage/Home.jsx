@@ -4,6 +4,7 @@ import { IoPlaySharp } from "react-icons/io5";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import image2 from "../../assets/image2.png";
 import MainContainer from "../../Container/MainContainer";
+import Home2nd from "./Home2nd";
 
 const Home = () => {
   return (
@@ -55,6 +56,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Home2nd></Home2nd>
     </MainContainer>
   );
 };
