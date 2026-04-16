@@ -34,6 +34,9 @@
 .paragraph1 {
   @apply text-[20px] text-[#868585];
 }
+.paragraph2 {
+  @apply text-[22px] text-[#000000];
+}
 
 .paraHeading {
   @apply text-[20px] font-semibold;
