@@ -15,6 +15,7 @@ export default function Home3rd({ homeLoader }) {
         <div className="flex items-center flex-col gap-20 mt-10">
           {homeLoader.map((homeRecentCard, index) => (
             <Home3rdCard
+              key={homeRecentCard._id}
               homeRecentCard={homeRecentCard}
               index={index}
             ></Home3rdCard>

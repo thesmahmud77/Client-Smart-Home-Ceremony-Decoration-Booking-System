@@ -17,7 +17,7 @@ const Navbar = () => {
           </div>
           <h1 className="text-2xl font-bold text-primary">Style Decor</h1>
         </Link>
-        <div className="NavMenu  col-span-6 flex item-center justify-center gap-3">
+        <div className="NavMenu  col-span-6 flexCenter gap-3">
           <NavLink
             to={"/"}
             className={({ isActive }) =>
@@ -51,14 +51,22 @@ const Navbar = () => {
             Contact
           </NavLink>
         </div>
-        <div className="Profile  col-span-3  flex items-center justify-center gap-2">
+        <div className="Profile  col-span-3  flex items-center justify-center gap-3">
           <NavLink
             to={"/user-deshboard"}
+            className={({ isActive }) =>
+              isActive ? "text-primary  font-bold" : "btn-secondary"
+            }
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to={"/login"}
             className={({ isActive }) =>
               isActive ? "text-primary font-bold" : "text-foreground"
             }
           >
-            Dashboard
+            Login
           </NavLink>
           <NavLink className={"w-10 h-10"}>
             <img width={50} height={50} src={profileDp} alt="" />

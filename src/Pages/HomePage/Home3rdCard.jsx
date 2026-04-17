@@ -2,7 +2,7 @@ import React from "react";
 import { MdFileDownloadDone } from "react-icons/md";
 
 const Home3rdCard = ({ homeRecentCard, index }) => {
-  console.log(homeRecentCard);
+  // console.log(homeRecentCard);
   const {
     serviceName,
     description,

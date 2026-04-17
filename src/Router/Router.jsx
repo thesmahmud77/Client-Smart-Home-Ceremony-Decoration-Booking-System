@@ -5,6 +5,8 @@ import ServicesPage from "../Pages/Service/ServicesPage";
 import Aboutpage from "../Pages/About/Aboutpage";
 import Contact from "../Pages/Contact/Contact";
 import UserDeshboard from "../Deshboard/UserDeshboard";
+import Login from "../Pages/Auth/Login";
+import Register from "../Pages/Auth/Register";
 
 export const router = createBrowserRouter([
   {
@@ -28,5 +30,13 @@ export const router = createBrowserRouter([
   {
     path: "/user-deshboard",
     element: <UserDeshboard></UserDeshboard>,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);
