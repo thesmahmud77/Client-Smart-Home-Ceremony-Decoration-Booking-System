@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../../Components/Navbar";
+import MainContainer from "../../Container/MainContainer";
 
 const ServicesPage = () => {
   return (
-    <div>
+    <MainContainer>
       <Navbar></Navbar>
-      <h1>Services Page</h1>
-    </div>
+    </MainContainer>
   );
 };
 

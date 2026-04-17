@@ -10,10 +10,12 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    loader: () => fetch("http://localhost:3000/recent-services"),
   },
   {
     path: "/service",
     element: <ServicesPage></ServicesPage>,
+    loader: () => fetch("http://localhost:3000/services"),
   },
   {
     path: "/about",
