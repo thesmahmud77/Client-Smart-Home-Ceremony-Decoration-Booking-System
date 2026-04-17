@@ -30,14 +30,34 @@
 .heading1 {
   @apply text-3xl font-bold;
 }
+.heading2 {
+  @apply text-2xl font-bold;
+}
+.heading3 {
+  @apply text-xl font-bold;
+}
 
 .paragraph1 {
   @apply text-[20px] text-[#868585];
 }
 .paragraph2 {
-  @apply text-[22px] text-[#000000];
+  @apply text-[16px] text-[#000000];
+}
+
+.paragraph3 {
+  @apply text-[14px] text-[#000000] px-0;
 }
 
 .paraHeading {
   @apply text-[20px] font-semibold;
+}
+
+.flexCenter {
+  @apply flex items-center justify-center;
+}
+.flexLeft {
+  @apply flex items-start justify-start;
+}
+.flexRight {
+  @apply flex items-center justify-end;
 }
