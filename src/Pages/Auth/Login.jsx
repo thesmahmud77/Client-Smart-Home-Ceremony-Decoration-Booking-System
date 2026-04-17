@@ -1,12 +1,13 @@
 import React from "react";
 import MainContainer from "../../Container/MainContainer";
 import Navbar from "../../Components/Navbar";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   return (
     <div className="bg-secondary min-h-screen min-w-screen">
       <Navbar></Navbar>
-      <div className="flexCenter flex-col bg-white w-100 mx-auto mt-50 py-30">
+      <div className="flexCenter flex-col bg-white w-100 mx-auto mt-50 py-30 rounded-xl">
         <h1 className="heading1">Welcome Back</h1>
         <p className="mt-2">Please enter your details to sign in.</p>
         <div>
@@ -20,6 +21,11 @@ const Login = () => {
             </div>
             <button className="btn-primary mt-4">Login</button>
           </fieldset>
+          <div className="divider">OR Continue with </div>
+          <button class="btn bg-white w-full text-black border-[#e5e5e5]">
+            <FcGoogle />
+            Login with Google
+          </button>
         </div>
       </div>
     </div>
