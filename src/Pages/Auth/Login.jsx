@@ -2,6 +2,7 @@ import React from "react";
 import MainContainer from "../../Container/MainContainer";
 import Navbar from "../../Components/Navbar";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router";
 
 const Login = () => {
   return (
@@ -27,6 +28,12 @@ const Login = () => {
             Login with Google
           </button>
         </div>
+        <p>
+          If you are not registed please{" "}
+          <span>
+            <Link to={"/register"}>Register</Link>
+          </span>
+        </p>
       </div>
     </div>
   );
