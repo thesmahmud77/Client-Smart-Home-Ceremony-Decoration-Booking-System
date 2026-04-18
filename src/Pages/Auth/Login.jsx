@@ -28,10 +28,12 @@ const Login = () => {
             Login with Google
           </button>
         </div>
-        <p>
+        <p className="mt-2">
           If you are not registed please{" "}
           <span>
-            <Link to={"/register"}>Register</Link>
+            <Link className="text-primary mx-2 font-bold" to={"/register"}>
+              Register
+            </Link>
           </span>
         </p>
       </div>
