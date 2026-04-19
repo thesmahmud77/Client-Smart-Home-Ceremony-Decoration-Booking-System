@@ -1,10 +1,12 @@
-import React from "react";
+import React, { use } from "react";
 import navlogo from "../assets/logo.png";
 import { Link, NavLink } from "react-router";
 import profileDp from "../assets/profile-dp.png";
 import MainContainer from "../Container/MainContainer";
+import { AuthContext } from "../Pages/Firebase/Context & Provider/AuthContext";
 
 const Navbar = () => {
+  const { user } = use(AuthContext);
   return (
     <MainContainer>
       <div className="grid grid-cols-12 py-4">
@@ -50,6 +52,7 @@ const Navbar = () => {
           >
             Contact
           </NavLink>
+          <h1>{user ? "Logined" : "Not Login yet"}</h1>
         </div>
         <div className="Profile  col-span-3  flex items-center justify-center gap-3">
           <NavLink

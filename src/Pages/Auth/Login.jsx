@@ -1,10 +1,22 @@
-import React from "react";
+import React, { use } from "react";
 import MainContainer from "../../Container/MainContainer";
 import Navbar from "../../Components/Navbar";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
+import { AuthContext } from "../Firebase/Context & Provider/AuthContext";
 
 const Login = () => {
+  const { GoogleSignIn, setUser } = use(AuthContext);
+
+  // Google Sign In Funcation
+  const handleGoogleSignIn = () => {
+    GoogleSignIn()
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => console.log(error));
+    // console.log("Google Signin Clicked");
+  };
   return (
     <div className="bg-secondary min-h-screen min-w-screen">
       <Navbar></Navbar>
@@ -23,13 +35,16 @@ const Login = () => {
             <button className="btn-primary mt-4">Login</button>
           </fieldset>
           <div className="divider">OR Continue with </div>
-          <button class="btn bg-white w-full text-black border-[#e5e5e5]">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn bg-white w-full text-black border-[#e5e5e5]"
+          >
             <FcGoogle />
             Login with Google
           </button>
         </div>
         <p className="mt-2">
-          If you are not registed please{" "}
+          If you are not registed please
           <span>
             <Link className="text-primary mx-2 font-bold" to={"/register"}>
               Register
