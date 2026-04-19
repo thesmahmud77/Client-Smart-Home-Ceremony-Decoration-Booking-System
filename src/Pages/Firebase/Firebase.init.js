@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDJulyXBOhEhXtILXVA1p5CDNGF-NKy2so",
-  authDomain: "smart-home-ed6cd.firebaseapp.com",
-  projectId: "smart-home-ed6cd",
-  storageBucket: "smart-home-ed6cd.firebasestorage.app",
-  messagingSenderId: "576625634946",
-  appId: "1:576625634946:web:40676dc66e0816d9bb4e9b",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

@@ -1,13 +1,21 @@
-import React from "react";
+import React, { use } from "react";
 import Navbar from "../../Components/Navbar";
 import { Link } from "react-router";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Firebase/Context & Provider/AuthContext";
 
 const Register = () => {
+
+  const { setUser,register } = use(AuthContext);
+
   const { register, handleSubmit,formState:{errors} } = useForm();
 
   const handleRegistration = (data) => {
-    console.log(data);
+    // console.log(data);
+    register().then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <div className="bg-secondary min-h-screen min-w-screen">
