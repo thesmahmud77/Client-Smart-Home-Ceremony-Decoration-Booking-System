@@ -6,7 +6,10 @@ import MainContainer from "../Container/MainContainer";
 import { AuthContext } from "../Pages/Firebase/Context & Provider/AuthContext";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
+  const handleLogout = () => {
+    logOut();
+  };
   return (
     <MainContainer>
       <div className="grid grid-cols-12 py-4">
@@ -63,14 +66,20 @@ const Navbar = () => {
           >
             Dashboard
           </NavLink>
-          <NavLink
-            to={"/login"}
-            className={({ isActive }) =>
-              isActive ? "text-primary font-bold" : "text-foreground"
-            }
-          >
-            Login
-          </NavLink>
+          {user ? (
+            <button onClick={handleLogout} className="btn btn-primary">
+              Logout
+            </button>
+          ) : (
+            <NavLink
+              to={"/login"}
+              className={({ isActive }) =>
+                isActive ? "text-primary font-bold" : "text-foreground"
+              }
+            >
+              Login
+            </NavLink>
+          )}
           <NavLink className={"w-10 h-10"}>
             <img width={50} height={50} src={profileDp} alt="" />
           </NavLink>
