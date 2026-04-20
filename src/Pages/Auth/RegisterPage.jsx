@@ -1,17 +1,26 @@
-import React from "react";
+import React, { use } from "react";
 import Navbar from "../../Components/Navbar";
 import { Link } from "react-router";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../Firebase/Context & Provider/AuthContext";
 
-const Register = () => {
+const RegisterPage = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { registerUser } = use(AuthContext);
 
   const handleRegister = (data) => {
-    console.log(data);
+    // console.log(data.email, data.password);
+    registerUser(data.email, data.password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="bg-secondary min-h-screen min-w-screen">
@@ -40,7 +49,7 @@ const Register = () => {
                 <input
                   type="email"
                   className="input w-70"
-                  {...register("register", { required: true })}
+                  {...register("email", { required: true })}
                   placeholder="Enter your Email"
                 />
                 <label className="label paragraph2">Password</label>
@@ -75,4 +84,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterPage;
