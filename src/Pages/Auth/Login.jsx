@@ -9,8 +9,8 @@ import { useForm } from "react-hook-form";
 const Login = () => {
   const { GoogleSignIn, setUser, loginWithEp } = use(AuthContext);
   const { register, handleSubmit } = useForm();
-  const loginRouteLocation = useLocation();
-  const navigate = useNavigate();
+  const loginLocation = useLocation();
+  const loginNavigate = useNavigate();
   // console.log(loaction);
 
   // Google Sign In Funcation
@@ -28,8 +28,8 @@ const Login = () => {
     loginWithEp(data.email, data.password)
       .then((result) => {
         setUser(result.user);
+        loginNavigate(loginLocation.state || "/");
         event.target.reset();
-        navigate(loginRouteLocation.state || "/");
       })
       .catch((error) => {
         console.log(error);

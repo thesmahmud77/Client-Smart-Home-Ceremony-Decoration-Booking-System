@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   const { user } = use(AuthContext);
   const privateRouteLocation = useLocation();
 
-  // console.log(loacion);
+  console.log("From Private Route", privateRouteLocation);
 
   if (user) {
     return children;
