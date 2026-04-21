@@ -2,13 +2,17 @@ import React, { use } from "react";
 import MainContainer from "../../Container/MainContainer";
 import Navbar from "../../Components/Navbar";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Firebase/Context & Provider/AuthContext";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
   const { GoogleSignIn, setUser, loginWithEp } = use(AuthContext);
   const { register, handleSubmit } = useForm();
+  const loginRouteLocation = useLocation();
+  const navigate = useNavigate();
+  // console.log(loaction);
+
   // Google Sign In Funcation
   const handleGoogleSignIn = () => {
     GoogleSignIn()
@@ -24,6 +28,8 @@ const Login = () => {
     loginWithEp(data.email, data.password)
       .then((result) => {
         setUser(result.user);
+        event.target.reset();
+        navigate(loginRouteLocation.state || "/");
       })
       .catch((error) => {
         console.log(error);
@@ -36,7 +42,7 @@ const Login = () => {
         <h1 className="heading1">Welcome Back</h1>
         <p className="mt-2">Please enter your details to sign in.</p>
         <div>
-          <form onClick={handleSubmit(handleSignInWithEP)}>
+          <form onSubmit={handleSubmit(handleSignInWithEP)}>
             <fieldset className="fieldset mt-10">
               <label className="label paragraph2">Email</label>
               <input

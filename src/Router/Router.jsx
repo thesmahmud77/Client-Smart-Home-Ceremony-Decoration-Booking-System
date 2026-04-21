@@ -7,6 +7,8 @@ import Contact from "../Pages/Contact/Contact";
 import UserDeshboard from "../Deshboard/UserDeshboard";
 import Login from "../Pages/Auth/Login";
 import RegisterPage from "../Pages/Auth/RegisterPage";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "../Pages/Profile/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -38,5 +40,13 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage></RegisterPage>,
+  },
+  {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <Profile></Profile>
+      </PrivateRoute>
+    ),
   },
 ]);

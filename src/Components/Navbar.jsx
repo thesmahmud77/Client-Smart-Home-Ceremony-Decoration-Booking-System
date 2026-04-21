@@ -80,9 +80,17 @@ const Navbar = () => {
               Login
             </NavLink>
           )}
-          <NavLink className={"w-10 h-10"}>
-            <img width={50} height={50} src={profileDp} alt="" />
-          </NavLink>
+          <div className={"w-10 h-10"}>
+            {user ? (
+              <NavLink to={"/profile"}>
+                <img width={50} height={50} src={user.photoURL} alt="" />
+              </NavLink>
+            ) : (
+              <NavLink to={"/profile"}>
+                <img width={50} height={50} src={profileDp} alt="" />
+              </NavLink>
+            )}
+          </div>
         </div>
       </div>
     </MainContainer>
